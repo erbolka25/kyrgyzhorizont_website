@@ -1,25 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- =========================
-      HERO HEADER
-========================= -->
 <section class="container mt-5 about-hero">
-  <h1 class="fw-bold mb-3 text-center">About Kyrgyz Horizont</h1>
-  <p class="text-muted lead text-center">
+  <h1 class="fw-bold mb-3 text-center" data-i18n="about.title">About Kyrgyz Horizont</h1>
+  <p class="text-muted lead text-center" data-i18n="about.subtitle">
     Independent trip planning service created by a local traveler — built with passion,
     honesty and deep love for Kyrgyzstan.
   </p>
 </section>
 
 
-<!-- =========================
-      FOUNDER SECTION
-========================= -->
 <section class="container my-5">
   <div class="row founder-row g-5">
 
-    <!-- IMAGE -->
     <div class="col-md-5">
       <div class="founder-img-box">
         <img src="{{ url_for('static', filename='image/erbol24.jpg') }}"
@@ -28,80 +21,85 @@
       </div>
     </div>
 
-    <!-- TEXT -->
     <div class="col-md-7">
-      <h2 class="fw-bold mb-3">Meet the Founder — Erbol</h2>
+      <h2 class="fw-bold mb-3" data-i18n="about.founder_title">Meet the Founder — Erbol</h2>
 
-      <p class="text-muted">
+      <p class="text-muted" data-i18n="about.bio1">
         I was born and raised in Kyrgyzstan, spending most of my childhood in the mountains.
         Over the years, I explored Issyk-Kul, Ala-Kul, Song-Kol, Skazka Canyon and many
         remote valleys — and now I help travelers experience them safely and meaningfully.
       </p>
 
       <ul class="about-list">
-        <li>Local traveler with real on-the-ground experience</li>
-        <li>Helps build safe, honest and realistic itineraries</li>
-        <li>Understands local culture, drivers, prices and hidden places</li>
-        <li>Supports travelers on WhatsApp throughout the trip</li>
+        <li data-i18n="about.li1">Local traveler with real on-the-ground experience</li>
+        <li data-i18n="about.li2">Helps build safe, honest and realistic itineraries</li>
+        <li data-i18n="about.li3">Understands local culture, drivers, prices and hidden places</li>
+        <li data-i18n="about.li4">Supports travelers on WhatsApp throughout the trip</li>
       </ul>
 
-      <p class="text-muted">
+      <p class="text-muted" data-i18n="about.bio2">
         My goal is simple: to make travel in Kyrgyzstan easier, safer and more meaningful —
         without tourist traps or overpriced agencies.
       </p>
 
       <a class="btn btn-primary rounded-pill px-4 mt-3"
-         href="{{ url_for('plan_page') }}">
+         href="{{ url_for('plan_page') }}" data-i18n="about.plan_btn">
         Plan My Trip
       </a>
-
     </div>
 
   </div>
 </section>
 
 
-<!-- =========================
-      WHY US
-========================= -->
 <section class="container my-5">
-  <h2 class="section-title text-center">Why Travelers Trust Us</h2>
-  <p class="section-subtitle text-center mb-4">
+  <h2 class="section-title text-center" data-i18n="about.why_title">Why Travelers Trust Us</h2>
+  <p class="section-subtitle text-center mb-4" data-i18n="about.why_subtitle">
     Transparent, honest and local-first.
   </p>
 
   <div class="row g-4 mt-3">
 
-    {% set features = [
-      ('Local Knowledge', 'We know the culture, roads, weather and hidden locations.'),
-      ('Honest Pricing', 'We never hide costs — you always see real prices.'),
-      ('Safe Routes', 'We help avoid dangerous passes, scams or bad roads.'),
-      ('Fast Support', 'WhatsApp assistance before and during your trip.')
-    ] %}
-
-    {% for title, text in features %}
     <div class="col-md-3">
       <div class="about-feature shadow-sm reveal">
-        <h3 class="h6 fw-bold mb-2">{{ title }}</h3>
-        <p class="text-muted small">{{ text }}</p>
+        <h3 class="h6 fw-bold mb-2" data-i18n="about.f1.title">Local Knowledge</h3>
+        <p class="text-muted small" data-i18n="about.f1.text">We know the culture, roads, weather and hidden locations.</p>
       </div>
     </div>
-    {% endfor %}
+
+    <div class="col-md-3">
+      <div class="about-feature shadow-sm reveal">
+        <h3 class="h6 fw-bold mb-2" data-i18n="about.f2.title">Honest Pricing</h3>
+        <p class="text-muted small" data-i18n="about.f2.text">We never hide costs — you always see real prices.</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="about-feature shadow-sm reveal">
+        <h3 class="h6 fw-bold mb-2" data-i18n="about.f3.title">Safe Routes</h3>
+        <p class="text-muted small" data-i18n="about.f3.text">We help avoid dangerous passes, scams or bad roads.</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="about-feature shadow-sm reveal">
+        <h3 class="h6 fw-bold mb-2" data-i18n="about.f4.title">Fast Support</h3>
+        <p class="text-muted small" data-i18n="about.f4.text">WhatsApp assistance before and during your trip.</p>
+      </div>
+    </div>
 
   </div>
 </section>
 
 
-<!-- =========================
-      CTA
-========================= -->
 <section class="container text-center my-5">
   <div class="cta-box shadow-lg">
-    <h2 class="fw-bold mb-2">Ready to Explore Kyrgyzstan?</h2>
-    <p class="mb-3">Tell us your dates and budget — we create your full personalized travel plan.</p>
+    <h2 class="fw-bold mb-2" data-i18n="about.cta_title">Ready to Explore Kyrgyzstan?</h2>
+    <p class="mb-3" data-i18n="about.cta_text">Tell us your dates and budget — we create your full personalized travel plan.</p>
 
     <a class="btn btn-warning btn-lg rounded-pill hover-raise wa-btn"
-       data-msg="Hi! I want to plan a trip to Kyrgyzstan.">
+       data-msg="Hi! I want to plan a trip to Kyrgyzstan."
+       data-i18n="about.cta_btn">
       Contact on WhatsApp
     </a>
   </div>
