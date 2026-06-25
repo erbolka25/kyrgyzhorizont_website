@@ -230,6 +230,17 @@ def regions():
         )
     )
 
+@app.route("/tours")
+@app.route("/tours/")
+def tours():
+    return render_template(
+        "tours.html",
+        meta=site_meta(
+            title="Tours in Kyrgyzstan — Kyrgyz Horizont",
+            description="Ala-Kul trek, Song-Kol yurt stay, Issyk-Kul, horseback riding and more."
+        )
+    )
+
 @app.route("/about")
 @app.route("/about/")
 def about():
