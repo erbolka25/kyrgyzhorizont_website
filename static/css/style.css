@@ -544,6 +544,43 @@ h1, h2, h3, h4 {
 .testimonial-country { font-size: .8rem; color: var(--muted); }
 
 /* ------------------------------
+   LANGUAGE SWITCHER
+------------------------------ */
+.lang-switcher {
+  gap: 0;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+  padding: 2px 5px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: color 0.18s;
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  color: var(--primary, #0d6efd);
+}
+
+.lang-btn.active {
+  color: var(--primary, #0d6efd);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lang-sep {
+  color: #ccc;
+  font-size: 0.75rem;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ------------------------------
    FLOATING WHATSAPP BUTTON
 ------------------------------ */
 #wa-float {

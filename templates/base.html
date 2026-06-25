@@ -91,49 +91,59 @@
 
           <li class="nav-item">
             <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}"
-               href="{{ url_for('index') }}">Home</a>
+               href="{{ url_for('index') }}" data-i18n="nav.home">Home</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link {% if request.endpoint == 'tours' %}active{% endif %}"
-               href="{{ url_for('tours') }}">Tours</a>
+               href="{{ url_for('tours') }}" data-i18n="nav.tours">Tours</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link {% if request.endpoint == 'gallery' %}active{% endif %}"
-               href="{{ url_for('gallery') }}">Gallery</a>
+               href="{{ url_for('gallery') }}" data-i18n="nav.gallery">Gallery</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link {% if request.endpoint == 'solo' %}active{% endif %}"
-               href="{{ url_for('solo') }}">Solo Travelers</a>
+               href="{{ url_for('solo') }}" data-i18n="nav.solo">Solo Travelers</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link {% if request.endpoint == 'plan_page' %}active{% endif %}"
-               href="{{ url_for('plan_page') }}">Plan My Trip</a>
+               href="{{ url_for('plan_page') }}" data-i18n="nav.plan">Plan My Trip</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link {% if request.endpoint == 'regions' %}active{% endif %}"
-               href="{{ url_for('regions') }}">Regions</a>
+               href="{{ url_for('regions') }}" data-i18n="nav.regions">Regions</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}"
-               href="{{ url_for('about') }}">About</a>
+               href="{{ url_for('about') }}" data-i18n="nav.about">About</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}"
-               href="{{ url_for('contact') }}">Contact</a>
+               href="{{ url_for('contact') }}" data-i18n="nav.contact">Contact</a>
           </li>
 
         </ul>
 
+        <!-- LANGUAGE SWITCHER -->
+        <div class="d-flex align-items-center ms-lg-3 lang-switcher" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="ru" onclick="switchLang('ru')">RU</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="de" onclick="switchLang('de')">DE</button>
+        </div>
+
         <!-- WHATSAPP BUTTON -->
         <a class="btn btn-warning ms-lg-3 px-3 wa-btn hover-raise"
-           data-msg="Hi! I want to plan a trip to Kyrgyzstan.">
+           data-msg="Hi! I want to plan a trip to Kyrgyzstan."
+           data-i18n="nav.whatsapp">
           WhatsApp
         </a>
 
@@ -159,13 +169,13 @@
 
       <div class="col-md-4">
         <h3 class="footer-brand">Kyrgyz Horizont</h3>
-        <p class="text-muted small">
+        <p class="text-muted small" data-i18n="footer.tagline">
           Premium travel planning across Kyrgyzstan — Issyk-Kul, Song-Kol, Naryn, Karakol and more.
         </p>
       </div>
 
       <div class="col-md-2">
-        <h5 class="footer-title">Explore</h5>
+        <h5 class="footer-title" data-i18n="footer.explore">Explore</h5>
         <ul class="footer-links">
           <li><a href="{{ url_for('index') }}">Home</a></li>
           <li><a href="{{ url_for('tours') }}">Tours</a></li>
@@ -177,7 +187,7 @@
       </div>
 
       <div class="col-md-3">
-        <h5 class="footer-title">Contact</h5>
+        <h5 class="footer-title" data-i18n="footer.contact">Contact</h5>
         <ul class="footer-links">
           <li><a href="{{ WHATSAPP_LINK }}" target="_blank">💬 WhatsApp</a></li>
           <li><a href="mailto:kyrgyzhorizont@gmail.com">✉️ kyrgyzhorizont@gmail.com</a></li>
@@ -187,18 +197,18 @@
       </div>
 
       <div class="col-md-3">
-        <h5 class="footer-title">About Us</h5>
+        <h5 class="footer-title" data-i18n="footer.about_us">About Us</h5>
         <p class="text-muted small">Bishkek, Kyrgyzstan 🇰🇬</p>
-        <p class="text-muted small">English Support 24/7</p>
-        <p class="text-muted small mt-2">Local trip planners helping travelers from 30+ countries explore Kyrgyzstan safely and meaningfully.</p>
-        <a href="{{ url_for('about') }}" class="btn btn-sm btn-outline-light rounded-pill mt-2 px-3">Meet the Team</a>
+        <p class="text-muted small" data-i18n="footer.support">English Support 24/7</p>
+        <p class="text-muted small mt-2" data-i18n="footer.about_text">Local trip planners helping travelers from 30+ countries explore Kyrgyzstan safely and meaningfully.</p>
+        <a href="{{ url_for('about') }}" class="btn btn-sm btn-outline-light rounded-pill mt-2 px-3" data-i18n="footer.meet">Meet the Team</a>
       </div>
 
     </div>
 
     <hr class="footer-line">
 
-    <p class="text-center text-muted small mb-0">
+    <p class="text-center text-muted small mb-0" data-i18n="footer.rights">
       © Kyrgyz Horizont — All rights reserved.
     </p>
 
@@ -218,6 +228,7 @@
 <!-- JAVASCRIPT -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/i18n.js') }}"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {

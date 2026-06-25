@@ -1,26 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{# FAQ items прямо в шаблоне, чтобы не было ошибки #}
-{% set faq_items = [
-  (
-    "Is Kyrgyz Horizont a tour agency?",
-    "No. We are an independent trip planning service. We help you build a safe, realistic itinerary, find drivers and stays — you stay in full control of your bookings and budget."
-  ),
-  (
-    "Can you help with drivers and accommodation?",
-    "Yes. We recommend and help you contact verified drivers, yurts, guesthouses and hotels, based on your route and comfort level."
-  ),
-  (
-    "Is this service good for solo travelers?",
-    "Absolutely. Many of our travelers are solo. We focus on safety, realistic distances and WhatsApp support during the trip."
-  ),
-  (
-    "How do I pay for the planning service?",
-    "You pay only after we agree on your route and you are happy with the plan. We usually accept standard online payment methods."
-  )
-] %}
-
 <!-- =========================
      HERO — FULLSCREEN
 ========================= -->
@@ -38,26 +18,27 @@
              alt="Kyrgyzstan mountains at sunset">
 
         <div class="carousel-caption hero-caption text-start fade-group">
-          
-          <p class="hero-kicker fade-in">Kyrgyz Horizont — Local Trip Planners</p>
 
-          <h1 class="display-4 fw-bold fade-in">
+          <p class="hero-kicker fade-in" data-i18n="hero.kicker">Kyrgyz Horizont — Local Trip Planners</p>
+
+          <h1 class="display-4 fw-bold fade-in" data-i18n="hero.title">
             Discover Kyrgyzstan with a Personal Trip Planner
           </h1>
 
-          <p class="lead mb-4 fade-in delay-1">
+          <p class="lead mb-4 fade-in delay-1" data-i18n="hero.subtitle">
             Custom itineraries, verified drivers, yurt stays and 24/7 WhatsApp support —
             created by locals for meaningful travel.
           </p>
 
           <div class="d-flex gap-3 fade-in delay-2">
             <a class="btn btn-lg btn-primary px-4 rounded-pill shadow-lg hover-raise"
-               href="{{ url_for('plan_page') }}">
+               href="{{ url_for('plan_page') }}" data-i18n="hero.btn.plan">
               Plan My Trip
             </a>
 
             <a class="btn btn-lg btn-warning px-4 rounded-pill shadow-lg hover-raise wa-btn"
-               data-msg="Hi! I want to plan a trip to Kyrgyzstan.">
+               data-msg="Hi! I want to plan a trip to Kyrgyzstan."
+               data-i18n="hero.btn.wa">
               WhatsApp
             </a>
           </div>
@@ -74,7 +55,7 @@
              alt="Skazka Canyon Kyrgyzstan">
 
         <div class="carousel-caption hero-caption d-none d-md-block text-start fade-group">
-          <p class="lead fade-in">Custom routes through canyons, lakes, mountains and nomad life.</p>
+          <p class="lead fade-in" data-i18n="hero.slide2">Custom routes through canyons, lakes, mountains and nomad life.</p>
         </div>
       </div>
 
@@ -97,26 +78,38 @@
      WHY CHOOSE OUR SERVICE
 ========================= -->
 <section class="container mb-5 mt-5">
-  <h2 class="section-title">Why Travelers Choose Us</h2>
-  <p class="section-subtitle">Created by locals — optimized for smart, independent travel.</p>
+  <h2 class="section-title" data-i18n="why.title">Why Travelers Choose Us</h2>
+  <p class="section-subtitle" data-i18n="why.subtitle">Created by locals — optimized for smart, independent travel.</p>
 
   <div class="row g-4 mt-3">
 
-    {% set why = [
-      ('Local Trip Planners', 'Born here. Raised here. We know every valley, pass and shortcut.'),
-      ('Custom Itineraries', 'Your dates, budget, pace and style — the route adapts to you.'),
-      ('Transparent Budgets', 'Clear prices for drivers, stays and activities. No hidden fees.'),
-      ('Fast WhatsApp Support', 'We respond within minutes — before and during your trip.')
-    ] %}
-
-    {% for title, text in why %}
     <div class="col-md-3">
       <div class="feature-card reveal shadow-sm">
-        <h3 class="h5 fw-bold mb-2">{{ title }}</h3>
-        <p class="text-muted">{{ text }}</p>
+        <h3 class="h5 fw-bold mb-2" data-i18n="why.1.title">Local Trip Planners</h3>
+        <p class="text-muted" data-i18n="why.1.text">Born here. Raised here. We know every valley, pass and shortcut.</p>
       </div>
     </div>
-    {% endfor %}
+
+    <div class="col-md-3">
+      <div class="feature-card reveal shadow-sm">
+        <h3 class="h5 fw-bold mb-2" data-i18n="why.2.title">Custom Itineraries</h3>
+        <p class="text-muted" data-i18n="why.2.text">Your dates, budget, pace and style — the route adapts to you.</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="feature-card reveal shadow-sm">
+        <h3 class="h5 fw-bold mb-2" data-i18n="why.3.title">Transparent Budgets</h3>
+        <p class="text-muted" data-i18n="why.3.text">Clear prices for drivers, stays and activities. No hidden fees.</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="feature-card reveal shadow-sm">
+        <h3 class="h5 fw-bold mb-2" data-i18n="why.4.title">Fast WhatsApp Support</h3>
+        <p class="text-muted" data-i18n="why.4.text">We respond within minutes — before and during your trip.</p>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -126,31 +119,43 @@
      ONLINE PLANNING SERVICE
 ========================= -->
 <section class="container mb-5">
-  <h2 class="section-title">Online Trip Planning Service</h2>
-  <p class="section-subtitle">Everything you need for a smooth and meaningful journey.</p>
+  <h2 class="section-title" data-i18n="planning.title">Online Trip Planning Service</h2>
+  <p class="section-subtitle" data-i18n="planning.subtitle">Everything you need for a smooth and meaningful journey.</p>
 
   <div class="row g-4 mt-3">
 
-    {% set planning = [
-      ('Personal Itinerary', 'A day-by-day plan with lakes, hikes, canyons, food spots and hidden gems.'),
-      ('Verified Drivers & Stays', 'Tested drivers, yurts, guesthouses and hotels — no tourist traps.'),
-      ('Nomadic Experiences', 'Horse riding, yurt stays, shepherd life and local traditions.'),
-      ('WhatsApp Assistance', 'Route updates, questions and help anytime during your trip.')
-    ] %}
-
-    {% for title, text in planning %}
     <div class="col-md-3">
-      <div class="planning-card reveal" data-delay="{{ loop.index }}">
-        <h3 class="h6 fw-bold mb-2">{{ title }}</h3>
-        <p class="text-muted small">{{ text }}</p>
+      <div class="planning-card reveal" data-delay="1">
+        <h3 class="h6 fw-bold mb-2" data-i18n="planning.1.title">Personal Itinerary</h3>
+        <p class="text-muted small" data-i18n="planning.1.text">A day-by-day plan with lakes, hikes, canyons, food spots and hidden gems.</p>
       </div>
     </div>
-    {% endfor %}
+
+    <div class="col-md-3">
+      <div class="planning-card reveal" data-delay="2">
+        <h3 class="h6 fw-bold mb-2" data-i18n="planning.2.title">Verified Drivers & Stays</h3>
+        <p class="text-muted small" data-i18n="planning.2.text">Tested drivers, yurts, guesthouses and hotels — no tourist traps.</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="planning-card reveal" data-delay="3">
+        <h3 class="h6 fw-bold mb-2" data-i18n="planning.3.title">Nomadic Experiences</h3>
+        <p class="text-muted small" data-i18n="planning.3.text">Horse riding, yurt stays, shepherd life and local traditions.</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="planning-card reveal" data-delay="4">
+        <h3 class="h6 fw-bold mb-2" data-i18n="planning.4.title">WhatsApp Assistance</h3>
+        <p class="text-muted small" data-i18n="planning.4.text">Route updates, questions and help anytime during your trip.</p>
+      </div>
+    </div>
 
   </div>
 
-  <p class="text-center mt-4 text-primary fw-semibold">
-    Full personalized travel plan — <strong>50 USD per trip</strong>
+  <p class="text-center mt-4 text-primary fw-semibold" data-i18n-html="planning.price">
+    Full personalized travel plan — <strong>$50 per trip</strong>
   </p>
 </section>
 
@@ -160,11 +165,11 @@
 ========================= -->
 <section class="container">
   <div class="trust-bar reveal">
-    <div class="trust-badge"><span>⭐</span> 4.9 / 5 Rating</div>
-    <div class="trust-badge"><span>👥</span> 500+ Travelers Helped</div>
-    <div class="trust-badge"><span>🏔️</span> 15+ Destinations</div>
-    <div class="trust-badge"><span>💬</span> WhatsApp 24/7</div>
-    <div class="trust-badge"><span>🌍</span> 30+ Countries</div>
+    <div class="trust-badge"><span>⭐</span> <span data-i18n="trust.rating">4.9 / 5 Rating</span></div>
+    <div class="trust-badge"><span>👥</span> <span data-i18n="trust.travelers">500+ Travelers Helped</span></div>
+    <div class="trust-badge"><span>🏔️</span> <span data-i18n="trust.destinations">15+ Destinations</span></div>
+    <div class="trust-badge"><span>💬</span> <span data-i18n="trust.support">WhatsApp 24/7</span></div>
+    <div class="trust-badge"><span>🌍</span> <span data-i18n="trust.countries">30+ Countries</span></div>
   </div>
 </section>
 
@@ -173,8 +178,8 @@
      POPULAR TOURS
 ========================= -->
 <section class="container mb-5 mt-2">
-  <h2 class="section-title">Popular Tours</h2>
-  <p class="section-subtitle">Handpicked experiences — from alpine treks to nomadic yurt stays.</p>
+  <h2 class="section-title" data-i18n="tours.title">Popular Tours</h2>
+  <p class="section-subtitle" data-i18n="tours.subtitle">Handpicked experiences — from alpine treks to nomadic yurt stays.</p>
 
   <div class="row g-4 mt-2">
     {% for t in tours %}
@@ -191,7 +196,8 @@
           <div class="d-flex justify-content-between align-items-center mt-auto">
             <span class="price">from ${{ t.price }}</span>
             <a class="btn btn-sm btn-warning rounded-pill px-3 wa-btn hover-raise"
-               data-msg="Hi! I'm interested in the {{ t.title }}. Can you tell me more?">
+               data-msg="Hi! I'm interested in the {{ t.title }}. Can you tell me more?"
+               data-i18n="tours.book">
               Book →
             </a>
           </div>
@@ -202,7 +208,7 @@
   </div>
 
   <div class="text-center mt-4">
-    <a href="{{ url_for('tours') }}" class="btn btn-outline-primary rounded-pill px-4">
+    <a href="{{ url_for('tours') }}" class="btn btn-outline-primary rounded-pill px-4" data-i18n="tours.viewall">
       View All Tours →
     </a>
   </div>
@@ -217,19 +223,19 @@
     <div class="row g-0">
       <div class="col-6 col-md-3"><div class="stat-item reveal">
         <div class="stat-number">500+</div>
-        <div class="stat-label">Happy Travelers</div>
+        <div class="stat-label" data-i18n="stats.travelers">Happy Travelers</div>
       </div></div>
       <div class="col-6 col-md-3"><div class="stat-item reveal">
         <div class="stat-number">15+</div>
-        <div class="stat-label">Destinations</div>
+        <div class="stat-label" data-i18n="stats.destinations">Destinations</div>
       </div></div>
       <div class="col-6 col-md-3"><div class="stat-item reveal">
         <div class="stat-number">30+</div>
-        <div class="stat-label">Countries Represented</div>
+        <div class="stat-label" data-i18n="stats.countries">Countries Represented</div>
       </div></div>
       <div class="col-6 col-md-3"><div class="stat-item reveal">
         <div class="stat-number">4.9★</div>
-        <div class="stat-label">Average Rating</div>
+        <div class="stat-label" data-i18n="stats.rating">Average Rating</div>
       </div></div>
     </div>
   </div>
@@ -240,44 +246,44 @@
      TESTIMONIALS
 ========================= -->
 <section class="container my-5">
-  <h2 class="section-title text-center">What Travelers Say</h2>
-  <p class="section-subtitle text-center">Real reviews from real trips.</p>
+  <h2 class="section-title text-center" data-i18n="reviews.title">What Travelers Say</h2>
+  <p class="section-subtitle text-center" data-i18n="reviews.subtitle">Real reviews from real trips.</p>
 
   <div class="row g-4 mt-2">
 
     <div class="col-md-4">
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
+        <p class="testimonial-text" data-i18n="reviews.1.text">
           Erbol planned our entire 10-day trip across Kyrgyzstan. Every detail was perfect —
           the drivers, the yurt camp at Song-Kol, the Ala-Kul trek. Truly unforgettable.
         </p>
-        <div class="testimonial-author">Sarah M.</div>
-        <div class="testimonial-country">🇬🇧 United Kingdom</div>
+        <div class="testimonial-author" data-i18n="reviews.1.author">Sarah M.</div>
+        <div class="testimonial-country" data-i18n="reviews.1.country">🇬🇧 United Kingdom</div>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
+        <p class="testimonial-text" data-i18n="reviews.2.text">
           As a solo traveler I was nervous, but the WhatsApp support throughout the trip
           made me feel completely safe. Best travel experience I've had in Central Asia.
         </p>
-        <div class="testimonial-author">Jonas K.</div>
-        <div class="testimonial-country">🇩🇪 Germany</div>
+        <div class="testimonial-author" data-i18n="reviews.2.author">Jonas K.</div>
+        <div class="testimonial-country" data-i18n="reviews.2.country">🇩🇪 Germany</div>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
+        <p class="testimonial-text" data-i18n="reviews.3.text">
           The $50 planning fee is worth every cent. Got a full custom itinerary within 24 hours,
           honest budget breakdown, and real local tips you won't find anywhere online.
         </p>
-        <div class="testimonial-author">Yuki T.</div>
-        <div class="testimonial-country">🇯🇵 Japan</div>
+        <div class="testimonial-author" data-i18n="reviews.3.author">Yuki T.</div>
+        <div class="testimonial-country" data-i18n="reviews.3.country">🇯🇵 Japan</div>
       </div>
     </div>
 
@@ -289,25 +295,53 @@
      FAQ
 ========================= -->
 <section class="container mb-5">
-  <h2 class="section-title">FAQ</h2>
+  <h2 class="section-title" data-i18n="faq.title">FAQ</h2>
 
   <div class="accordion premium-accordion" id="faqAcc">
 
-    {% for q, a in faq_items %}
     <div class="accordion-item">
-      <h2 class="accordion-header" id="heading{{ loop.index }}">
-        <button class="accordion-button collapsed"
-                data-bs-toggle="collapse"
-                data-bs-target="#faq{{ loop.index }}">
-          {{ q }}
+      <h2 class="accordion-header" id="heading1">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1" data-i18n="faq.1.q">
+          Is Kyrgyz Horizont a tour agency?
         </button>
       </h2>
-
-      <div id="faq{{ loop.index }}" class="accordion-collapse collapse">
-        <div class="accordion-body">{{ a }}</div>
+      <div id="faq1" class="accordion-collapse collapse">
+        <div class="accordion-body" data-i18n="faq.1.a">No. We are an independent trip planning service. We help you build a safe, realistic itinerary, find drivers and stays — you stay in full control of your bookings and budget.</div>
       </div>
     </div>
-    {% endfor %}
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading2">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2" data-i18n="faq.2.q">
+          Can you help with drivers and accommodation?
+        </button>
+      </h2>
+      <div id="faq2" class="accordion-collapse collapse">
+        <div class="accordion-body" data-i18n="faq.2.a">Yes. We recommend and help you contact verified drivers, yurts, guesthouses and hotels, based on your route and comfort level.</div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading3">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3" data-i18n="faq.3.q">
+          Is this service good for solo travelers?
+        </button>
+      </h2>
+      <div id="faq3" class="accordion-collapse collapse">
+        <div class="accordion-body" data-i18n="faq.3.a">Absolutely. Many of our travelers are solo. We focus on safety, realistic distances and WhatsApp support during the trip.</div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading4">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4" data-i18n="faq.4.q">
+          How do I pay for the planning service?
+        </button>
+      </h2>
+      <div id="faq4" class="accordion-collapse collapse">
+        <div class="accordion-body" data-i18n="faq.4.a">You pay only after we agree on your route and you are happy with the plan. We usually accept standard online payment methods.</div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -318,13 +352,14 @@
 ========================= -->
 <section class="container text-center mb-5">
   <div class="cta-box shadow-lg">
-    <h2 class="mb-2 fw-bold">Ready to start planning?</h2>
-    <p class="mb-3 text-light">
+    <h2 class="mb-2 fw-bold" data-i18n="cta.title">Ready to start planning?</h2>
+    <p class="mb-3 text-light" data-i18n="cta.subtitle">
       Tell us your dates and budget — we build your full travel plan.
     </p>
 
     <a class="btn btn-warning btn-lg rounded-pill px-4 hover-raise wa-btn"
-       data-msg="Hi! I want to plan my trip to Kyrgyzstan.">
+       data-msg="Hi! I want to plan my trip to Kyrgyzstan."
+       data-i18n="cta.btn">
       Contact on WhatsApp
     </a>
   </div>
