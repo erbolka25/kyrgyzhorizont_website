@@ -1,0 +1,4 @@
+/* Contact page */
+.ratio iframe {
+  border-radius: var(--radius);
+}

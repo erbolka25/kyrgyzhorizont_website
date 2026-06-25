@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- =========================
+     HERO — PREMIUM UPDATED
+========================= -->
+<section class="plan-hero container py-5 text-center">
+  <div class="plan-hero-inner shadow-xl rounded-4">
+
+    <p class="hero-kicker">Kyrgyz Horizont — Personal Trip Planners</p>
+
+    <h1 class="fw-bold display-5 mb-3">
+      Plan Your Perfect Trip to Kyrgyzstan
+    </h1>
+
+    <p class="lead text-muted mb-3">
+      Custom itinerary. Safe logistics. Local expertise.  
+      Tailored exactly to your dates, style and travel budget.
+    </p>
+
+    <p class="text-muted small mb-4">
+      You receive a full travel plan, booking assistance and 24/7 WhatsApp support — 
+      so you can travel independently, but never feel lost.
+    </p>
+
+    <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+      <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning btn-lg rounded-pill px-4 shadow-sm" target="_blank">
+        Message on WhatsApp →
+      </a>
+
+      <a href="#plan-form" class="btn btn-outline-primary btn-lg rounded-pill px-4">
+        Send trip request
+      </a>
+    </div>
+
+    <div class="plan-hero-badge mt-3">
+      <span class="badge bg-light text-dark px-3 py-2 shadow-sm">
+        Average response time: <strong>1–3 hours</strong>
+      </span>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     SEO BLOCK — INTRO
+========================= -->
+<section class="container my-4">
+  <p class="text-muted">
+    Our trip-planning service is designed for travelers who want to explore Kyrgyzstan on their own,
+    but with a clear, safe and optimized route. We help you choose the best regions, estimate your
+    daily budget, connect with trusted drivers and avoid tourist traps — so your trip feels organized,
+    flexible and stress-free.
+  </p>
+</section>
+
+
+<!-- =========================
+     WHAT YOU GET (UPDATED)
+========================= -->
+<section class="container my-5">
+  <h2 class="section-title text-center mb-3">Personal Travel Plan — 50 USD</h2>
+
+  <p class="text-muted text-center mb-4">
+    Perfect for solo travelers, couples or small groups who want flexibility,
+    but also a clear and realistic plan for each day.
+  </p>
+
+  <div class="row g-4 plan-value-row">
+
+    <div class="col-md-4">
+      <div class="plan-value-card shadow-sm h-100">
+        <div class="icon-wrap">📅</div>
+        <h5 class="fw-bold mb-2">Full Itinerary</h5>
+        <p class="text-muted small mb-0">
+          Day-by-day route (1–14 days): lakes, canyons, hikes, viewpoints, food and hidden spots.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="plan-value-card shadow-sm h-100">
+        <div class="icon-wrap">🏨</div>
+        <h5 class="fw-bold mb-2">Booking Support</h5>
+        <p class="text-muted small mb-0">
+          We help you choose and book guesthouses, yurts, hotels and private drivers.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="plan-value-card shadow-sm h-100">
+        <div class="icon-wrap">💬</div>
+        <h5 class="fw-bold mb-2">WhatsApp Assistance</h5>
+        <p class="text-muted small mb-0">
+          Quick support, updates and help during your whole trip in Kyrgyzstan.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="text-center text-muted small mt-3 mb-0">
+    Payment is made only after we confirm availability and agree on your plan.
+  </p>
+</section>
+
+
+<!-- =========================
+     SEO BLOCK — DETAILS
+========================= -->
+<section class="container my-4">
+  <p class="text-muted">
+    Your personal travel plan can include a mix of Issyk-Kul, Naryn, Song-Kol, Karakol and Chui region. 
+    We adapt your itinerary to your comfort level — from light sightseeing and short walks to mountain 
+    hikes, horse trekking and yurt stays. Every route is created manually, based on your preferences.
+  </p>
+</section>
+
+
+<!-- =========================
+     3 STEPS (PREMIUM)
+========================= -->
+<section class="container my-5">
+  <h2 class="section-title text-center mb-4">How It Works</h2>
+
+  <div class="row g-4 text-center plan-steps">
+
+    <div class="col-md-4">
+      <div class="step-card shadow-sm p-4 h-100">
+        <span class="step-number">1</span>
+        <h5 class="fw-bold mb-2">Send your request</h5>
+        <p class="text-muted small">
+          Share your dates, regions, budget and travel style using the form or WhatsApp.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="step-card shadow-sm p-4 h-100">
+        <span class="step-number">2</span>
+        <h5 class="fw-bold mb-2">We build the itinerary</h5>
+        <p class="text-muted small">
+          Within 24 hours you receive a complete itinerary draft with daily structure and key details.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="step-card shadow-sm p-4 h-100">
+        <span class="step-number">3</span>
+        <h5 class="fw-bold mb-2">Travel confidently</h5>
+        <p class="text-muted small">
+          You follow your plan, ask questions anytime on WhatsApp and adjust your route if needed.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     SEO BLOCK — TRUST
+========================= -->
+<section class="container my-4">
+  <p class="text-muted">
+    We focus on clarity and honesty: we do not sell fixed group tours, but instead help you build 
+    the best plan for your own trip. You stay in control of your budget, bookings and pace — while 
+    we support you with local insights and logistics.
+  </p>
+</section>
+
+
+<!-- =========================
+     FORM (IMPROVED UI)
+========================= -->
+<section class="container my-5" id="plan-form">
+  <div class="row g-4">
+
+    <div class="col-lg-5">
+      <h2 class="section-title mb-3">Tell Us About Your Trip</h2>
+      <p class="text-muted mb-3">
+        Fill in a few details — we will reply with an itinerary draft and follow-up questions if needed.
+      </p>
+
+      <a href="{{ WHATSAPP_LINK }}" target="_blank" class="btn btn-outline-primary rounded-pill px-4">
+        Or message on WhatsApp →
+      </a>
+    </div>
+
+    <div class="col-lg-7">
+      <form class="card shadow-sm p-4" action="/send_message" method="POST">
+        <input type="hidden" name="source" value="plan_my_trip">
+
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <label class="form-label">Name *</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Email *</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">WhatsApp</label>
+            <input type="text" name="phone" class="form-control">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Dates</label>
+            <input type="text" name="dates" class="form-control" placeholder="e.g. June 10–15">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Budget</label>
+            <input type="text" name="budget" class="form-control" placeholder="$150–$300">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Style</label>
+            <select class="form-select" name="style">
+              <option>Budget</option>
+              <option>Comfort</option>
+              <option>Premium</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Regions</label>
+            <select class="form-select" name="regions">
+              <option>Not sure</option>
+              <option>Naryn</option>
+              <option>Issyk-Kul</option>
+              <option>Chuy</option>
+              <option>Osh / Jalal-Abad</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Trip details *</label>
+            <textarea name="message" rows="4" class="form-control" required
+                      placeholder="What kind of trip do you imagine? Activities, comfort level, special wishes."></textarea>
+          </div>
+
+        </div>
+
+        <div class="d-flex align-items-center mt-3 gap-2">
+          <button class="btn btn-primary px-4">Submit</button>
+          <a href="{{ WHATSAPP_LINK }}" target="_blank" class="btn btn-warning px-4">WhatsApp</a>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     PACKAGES (IMPROVED)
+========================= -->
+<section class="container my-5">
+  <h2 class="section-title mb-4">Example Itineraries</h2>
+
+  <p class="text-muted mb-4">
+    These are just examples — your final plan will be fully customized to your interests, 
+    fitness level and available days.
+  </p>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="plan-card shadow-sm p-4 h-100">
+        <h4 class="fw-bold mb-2">Comfort Journey</h4>
+        <p class="text-muted small">Beginner-friendly</p>
+        <ul class="list-unstyled small mb-3">
+          <li>✔ Issyk-Kul + canyons</li>
+          <li>✔ Light walks & viewpoints</li>
+          <li>✔ 2–3 days</li>
+        </ul>
+        <p class="fw-bold text-primary fs-5">$120–$180 (estimate)</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="plan-card shadow-sm p-4 h-100">
+        <h4 class="fw-bold mb-2">Nomad Adventure</h4>
+        <p class="text-muted small">Active travelers</p>
+        <ul class="list-unstyled small mb-3">
+          <li>✔ Song-Kol + horse riding</li>
+          <li>✔ Yurts, stars & campfires</li>
+          <li>✔ 3–5 days</li>
+        </ul>
+        <p class="fw-bold text-primary fs-5">$180–$280 (estimate)</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="plan-card shadow-sm p-4 h-100">
+        <h4 class="fw-bold mb-2">Mountain Trekking</h4>
+        <p class="text-muted small">For experienced hikers</p>
+        <ul class="list-unstyled small mb-3">
+          <li>✔ Ala-Kul or Karakol peaks</li>
+          <li>✔ Trekking with guesthouse stays</li>
+          <li>✔ 3–6 days</li>
+        </ul>
+        <p class="fw-bold text-primary fs-5">$250–$350 (estimate)</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     FINAL CTA (PREMIUM)
+========================= -->
+<section class="container text-center my-5">
+  <div class="cta-box shadow-lg">
+    <h2 class="fw-bold mb-2">Ready to start planning?</h2>
+    <p class="text-light mb-3">
+      Send your travel idea — we’ll turn it into a safe, optimized and beautiful itinerary for Kyrgyzstan.
+    </p>
+    <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning btn-lg rounded-pill px-4" target="_blank">
+      Contact on WhatsApp
+    </a>
+  </div>
+</section>
+
+{% endblock %}

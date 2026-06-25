@@ -1,0 +1,30 @@
+{% for t in tours %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "{{ t.title }}",
+  "description": "{{ t.summary }}",
+  "image": "{{ url_for('static', filename=t.image, _external=True) }}",
+  "touristType": "AdventureTravel",
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ t.price }}",
+    "priceCurrency": "USD",
+    "url": "{{ site.domain }}/{{ lang }}/tours"
+  },
+  "itinerary": {
+    "@type": "ItemList",
+    "numberOfItems": 1,
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "{{ t.title }} ({{ t.duration }})"
+      }
+    }]
+  }
+}
+</script>
+{% endfor %}

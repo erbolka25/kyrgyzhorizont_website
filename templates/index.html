@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{# FAQ items прямо в шаблоне, чтобы не было ошибки #}
+{% set faq_items = [
+  (
+    "Is Kyrgyz Horizont a tour agency?",
+    "No. We are an independent trip planning service. We help you build a safe, realistic itinerary, find drivers and stays — you stay in full control of your bookings and budget."
+  ),
+  (
+    "Can you help with drivers and accommodation?",
+    "Yes. We recommend and help you contact verified drivers, yurts, guesthouses and hotels, based on your route and comfort level."
+  ),
+  (
+    "Is this service good for solo travelers?",
+    "Absolutely. Many of our travelers are solo. We focus on safety, realistic distances and WhatsApp support during the trip."
+  ),
+  (
+    "How do I pay for the planning service?",
+    "You pay only after we agree on your route and you are happy with the plan. We usually accept standard online payment methods."
+  )
+] %}
+
+<!-- =========================
+     HERO — FULLSCREEN
+========================= -->
+<section id="home" class="container-fluid px-0">
+
+  <div class="carousel slide carousel-fade" id="heroCarousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active position-relative hero-slide">
+        <div class="hero-overlay"></div>
+
+        <img src="{{ url_for('static', filename='image/sunset.jpg') }}"
+             class="hero-img"
+             alt="Kyrgyzstan mountains at sunset">
+
+        <div class="carousel-caption hero-caption text-start fade-group">
+          
+          <p class="hero-kicker fade-in">Kyrgyz Horizont — Local Trip Planners</p>
+
+          <h1 class="display-4 fw-bold fade-in">
+            Discover Kyrgyzstan with a Personal Trip Planner
+          </h1>
+
+          <p class="lead mb-4 fade-in delay-1">
+            Custom itineraries, verified drivers, yurt stays and 24/7 WhatsApp support —
+            created by locals for meaningful travel.
+          </p>
+
+          <div class="d-flex gap-3 fade-in delay-2">
+            <a class="btn btn-lg btn-primary px-4 rounded-pill shadow-lg hover-raise"
+               href="{{ url_for('plan_page') }}">
+              Plan My Trip
+            </a>
+
+            <a class="btn btn-lg btn-warning px-4 rounded-pill shadow-lg hover-raise wa-btn"
+               data-msg="Hi! I want to plan a trip to Kyrgyzstan.">
+              WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="carousel-item position-relative hero-slide">
+        <div class="hero-overlay"></div>
+
+        <img src="{{ url_for('static', filename='image/skazka-canyons.webp') }}"
+             class="hero-img"
+             alt="Skazka Canyon Kyrgyzstan">
+
+        <div class="carousel-caption hero-caption d-none d-md-block text-start fade-group">
+          <p class="lead fade-in">Custom routes through canyons, lakes, mountains and nomad life.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTROLS -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     WHY CHOOSE OUR SERVICE
+========================= -->
+<section class="container mb-5 mt-5">
+  <h2 class="section-title">Why Travelers Choose Us</h2>
+  <p class="section-subtitle">Created by locals — optimized for smart, independent travel.</p>
+
+  <div class="row g-4 mt-3">
+
+    {% set why = [
+      ('Local Trip Planners', 'Born here. Raised here. We know every valley, pass and shortcut.'),
+      ('Custom Itineraries', 'Your dates, budget, pace and style — the route adapts to you.'),
+      ('Transparent Budgets', 'Clear prices for drivers, stays and activities. No hidden fees.'),
+      ('Fast WhatsApp Support', 'We respond within minutes — before and during your trip.')
+    ] %}
+
+    {% for title, text in why %}
+    <div class="col-md-3">
+      <div class="feature-card reveal shadow-sm">
+        <h3 class="h5 fw-bold mb-2">{{ title }}</h3>
+        <p class="text-muted">{{ text }}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+
+<!-- =========================
+     ONLINE PLANNING SERVICE
+========================= -->
+<section class="container mb-5">
+  <h2 class="section-title">Online Trip Planning Service</h2>
+  <p class="section-subtitle">Everything you need for a smooth and meaningful journey.</p>
+
+  <div class="row g-4 mt-3">
+
+    {% set planning = [
+      ('Personal Itinerary', 'A day-by-day plan with lakes, hikes, canyons, food spots and hidden gems.'),
+      ('Verified Drivers & Stays', 'Tested drivers, yurts, guesthouses and hotels — no tourist traps.'),
+      ('Nomadic Experiences', 'Horse riding, yurt stays, shepherd life and local traditions.'),
+      ('WhatsApp Assistance', 'Route updates, questions and help anytime during your trip.')
+    ] %}
+
+    {% for title, text in planning %}
+    <div class="col-md-3">
+      <div class="planning-card reveal" data-delay="{{ loop.index }}">
+        <h3 class="h6 fw-bold mb-2">{{ title }}</h3>
+        <p class="text-muted small">{{ text }}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <p class="text-center mt-4 text-primary fw-semibold">
+    Full personalized travel plan — <strong>50 USD per trip</strong>
+  </p>
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+<section class="container mb-5">
+  <h2 class="section-title">FAQ</h2>
+
+  <div class="accordion premium-accordion" id="faqAcc">
+
+    {% for q, a in faq_items %}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading{{ loop.index }}">
+        <button class="accordion-button collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq{{ loop.index }}">
+          {{ q }}
+        </button>
+      </h2>
+
+      <div id="faq{{ loop.index }}" class="accordion-collapse collapse">
+        <div class="accordion-body">{{ a }}</div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+<section class="container text-center mb-5">
+  <div class="cta-box shadow-lg">
+    <h2 class="mb-2 fw-bold">Ready to start planning?</h2>
+    <p class="mb-3 text-light">
+      Tell us your dates and budget — we build your full travel plan.
+    </p>
+
+    <a class="btn btn-warning btn-lg rounded-pill px-4 hover-raise wa-btn"
+       data-msg="Hi! I want to plan my trip to Kyrgyzstan.">
+      Contact on WhatsApp
+    </a>
+  </div>
+</section>
+
+{% endblock %}

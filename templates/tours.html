@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- =========================
+     PAGE HEADER
+========================= -->
+<section class="tours-hero container py-5">
+  <h1 class="display-5 fw-bold mb-3 title-xl">Personalized tours for every traveler</h1>
+
+  <p class="lead text-muted mb-4 subtitle-lg">
+    Tell us your dates & budget — we build your itinerary within minutes.
+  </p>
+
+  <a class="btn btn-primary btn-lg rounded-pill px-4 shadow-lg hover-raise wa-btn"
+     data-msg="Hi! I want a personalized tour. Can you help me plan it?">
+    Get a personalized tour →
+  </a>
+</section>
+
+
+<!-- =========================
+     FEATURED PACKAGES
+========================= -->
+<section class="container mt-4">
+  <h2 class="section-title mb-4">Top Packages</h2>
+
+  <div class="row g-4">
+
+    <!-- 1 — Aksuu -->
+    <div class="col-md-4">
+      <div class="tour-premium-card shadow-sm reveal" data-delay="1">
+        <img loading="lazy"
+             src="{{ url_for('static', filename='image/tours/aksuu-traverse.jpg') }}"
+             class="tour-premium-img"
+             alt="Aksuu traverse trekking">
+
+        <div class="tour-premium-body">
+          <h3 class="h5 fw-bold">Aksuu Traverse — 8 days</h3>
+          <p class="text-muted small mb-2">The most dramatic multi-day trek in Kyrgyzstan.</p>
+          <p class="price">80 000 сом</p>
+
+          <a class="btn btn-warning btn-sm rounded-pill shadow-sm wa-btn"
+             data-msg="Hi! I'm interested in the Aksuu Traverse (8 days).">
+            Book
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 — Ala-Kul -->
+    <div class="col-md-4">
+      <div class="tour-premium-card shadow-sm reveal" data-delay="2">
+        <img loading="lazy"
+             src="{{ url_for('static', filename='image/tours/ala-archa.jpg') }}"
+             class="tour-premium-img"
+             alt="Ala-Kul lake & glacier trek">
+
+        <div class="tour-premium-body">
+          <h3 class="h5 fw-bold">Ala-Kul Trek — 3 days</h3>
+          <p class="text-muted small mb-2">Alpine lake, glacier valleys, 3860m mountain pass.</p>
+          <p class="price">20 000 сом</p>
+
+          <a class="btn btn-warning btn-sm rounded-pill shadow-sm wa-btn"
+             data-msg="Hi! I want to book the Ala-Kul Trek (3 days).">
+            Book
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 — Song-Kol -->
+    <div class="col-md-4">
+      <div class="tour-premium-card shadow-sm reveal" data-delay="3">
+        <img loading="lazy"
+             src="{{ url_for('static', filename='image/tours/song-kol.jpg') }}"
+             class="tour-premium-img"
+             alt="Song-Kol lake yurt stay">
+
+        <div class="tour-premium-body">
+          <h3 class="h5 fw-bold">Song-Kol — 3 days</h3>
+          <p class="text-muted small mb-2">Yurt stay, horses, nomadic shepherd life.</p>
+          <p class="price">20 000 сом</p>
+
+          <a class="btn btn-warning btn-sm rounded-pill shadow-sm wa-btn"
+             data-msg="Hi! I want to book the Song-Kol tour (3 days).">
+            Book
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 — Horseback riding -->
+    <div class="col-md-4">
+      <div class="tour-premium-card shadow-sm reveal">
+        <img loading="lazy"
+             src="{{ url_for('static', filename='image/tours/horseback-riding.jpg') }}"
+             class="tour-premium-img"
+             alt="Horse riding in Kyrgyzstan">
+
+        <div class="tour-premium-body">
+          <h3 class="h5 fw-bold">Horse riding — Kemin</h3>
+          <p class="text-muted small mb-2">Family-friendly and great for beginners.</p>
+          <p class="price">2 000 сом / person</p>
+
+          <a class="btn btn-warning btn-sm rounded-pill shadow-sm wa-btn"
+             data-msg="Hello! I want to book Horse Riding Kemin.">
+            Book
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 — Ala-Archa -->
+    <div class="col-md-4">
+      <div class="tour-premium-card shadow-sm reveal">
+        <img loading="lazy"
+             src="{{ url_for('static', filename='image/tours/ala-archa.jpg') }}"
+             class="tour-premium-img"
+             alt="Ala-Archa National Park">
+
+        <div class="tour-premium-body">
+          <h3 class="h5 fw-bold">Ala-Archa National Park</h3>
+          <p class="text-muted small mb-2">The best 1-day nature escape from Bishkek.</p>
+          <p class="price">15 000 сом</p>
+
+          <a class="btn btn-warning btn-sm rounded-pill shadow-sm wa-btn"
+             data-msg="Hi! I want to book Ala-Archa National Park tour.">
+            Book
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 — Kol-Tor -->
+    <div class="col-md-4">
+      <div class="tour-premium-card shadow-sm reveal">
+        <img loading="lazy"
+             src="{{ url_for('static', filename='image/tours/kol-tor.jpg') }}"
+             class="tour-premium-img"
+             alt="Kol-Tor glacier lake">
+
+        <div class="tour-premium-body">
+          <h3 class="h5 fw-bold">Kol-Tor Lake — 1 day</h3>
+          <p class="text-muted small mb-2">Turquoise glacier lake surrounded by forests.</p>
+          <p class="price">5 000 сом</p>
+
+          <a class="btn btn-warning btn-sm rounded-pill shadow-sm wa-btn"
+             data-msg="Hi! I want to explore Kol-Tor Lake (1 day).">
+            Book
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     CTA — bottom
+========================= -->
+<section class="container text-center my-5">
+  <div class="cta-box shadow-lg">
+    <h2 class="fw-bold mb-2">Want a custom tour?</h2>
+
+    <p class="text-light mb-3">
+      Tell us your dates, your style & your budget — we’ll build your perfect trip.
+    </p>
+
+    <a class="btn btn-warning btn-lg rounded-pill px-4 hover-raise shadow-sm wa-btn"
+       data-msg="Hi! I want to plan a custom trip.">
+      Contact on WhatsApp
+    </a>
+  </div>
+</section>
+
+{% endblock %}

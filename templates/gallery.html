@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="container py-5 gallery-header text-center">
+    <p class="gallery-kicker">Kyrgyzstan Landscapes</p>
+    <h1 class="fw-bold mb-3">Photo Gallery</h1>
+    <p class="gallery-intro text-muted">
+        Mountains, lakes, canyons, nomads and authentic Kyrgyz culture — captured from real trips.
+    </p>
+</section>
+
+<section class="container pb-5">
+
+    <!-- Masonry wrapper -->
+    <div class="masonry" id="gallery-wrapper" style="opacity:0; transition:opacity 0.4s ease;">
+
+        {% set photos = [
+            ('aksuu-traverse.jpg',        'Aksuu Traverse — dramatic mountain ridge'),
+            ('ala-archa.jpeg',            'Ala-Archa National Park — glaciers & valleys'),
+            ('ala-kul.jpg',               'Ala-Kul Lake — 3560m alpine gem'),
+            ('ala-kultrek.webp',          'Ala-Kul Trek — camping above the clouds'),
+            ('backpack.png',              'Backpacker crossing mountain pass'),
+            ('djeti-ogyz1.jpg',           'Djeti-Ogyz — Seven Bulls rock formations'),
+            ('djety_oguz.jpg',            'Djeti-Ogyz canyon — red sandstone'),
+            ('eagle.jpg',                 'Golden eagle — Kyrgyz falconry tradition'),
+            ('food.jpg',                  'Traditional Kyrgyz cuisine — osh, breads, tea'),
+            ('horseback-riding-kyrgyzstan.webp', 'Horseback riding across pasturelands'),
+            ('horse-riding.jpg',          'Nomads riding horses in summer jailoo'),
+            ('issuk-kul.jpg',             'Issyk-Kul — pearl of Kyrgyzstan'),
+            ('issyk-kul+road.jpg',        'Road to Issyk-Kul — coastline beauty'),
+            ('jeti-oguz-canyon.jpg',      'Jeti-Oguz Canyon — legendary cliffs'),
+            ('karakol.jpg',               'Winter Karakol — snowy forest'),
+            ('kol-suu.jpg',               'Kol-Suu Lake — dramatic turquoise fjord'),
+            ('kol-tor.jpg',               'Kol-Tor Lake — hidden turquoise valley'),
+            ('mountain1.avif',            'High-mountain plateau — clean air & silence'),
+            ('mountain123.jpg',           'Tien-Shan mountains — panoramic peaks'),
+            ('mountains-tien-s-han.jpg',  'Tien Shan range from above'),
+            ('nomads.jpg',                'Nomads with horses — real Kyrgyz life'),
+            ('skazka-canyons.webp',       'Fairy Tale Canyon — colorful shapes'),
+            ('song-kol.jpg',              'Song-Kol Lake — high-altitude pastures'),
+            ('song-kol-horse.jpg',        'Horse grazing on Song-Kol shore'),
+            ('song-kol-yurt.jpg',         'Song-Kol — traditional yurt camp'),
+            ('tien-shan.jpg',             'Tien Shan — endless ridges'),
+            ('valley-kemin.jpg',          'Kemin Valley — quiet green landscapes'),
+            ('waterfall-hidden.avif',     'Hidden waterfall in mountain forest'),
+            ('watterfall.jpg',            'High waterfall — icy river'),
+            ('yssuk-kul.jpg',             'Yssyk-Kul — crystal clear water')
+        ] %}
+
+        {% for file, caption in photos %}
+        <figure class="masonry-item">
+            <img loading="lazy" src="{{ url_for('static', filename='image/' ~ file) }}" alt="{{ caption }}">
+            <figcaption class="figure-caption">{{ caption }}</figcaption>
+        </figure>
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- Fix jumping masonry -->
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.getElementById("gallery-wrapper");
+
+    // Wait until all images are fully loaded
+    imagesLoaded(wrapper, () => {
+        wrapper.style.opacity = "1";
+    });
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Tour | Kyrgyz Horizont</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header id="header">
+    <nav>
+      <a href="/" class="logo">🏔️ Kyrgyz Horizont</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/tours">Tours</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="section" style="margin-top:100px;">
+    <h2>Book Your Tour: {{ tour }}</h2>
+
+    {% if success %}
+      <div class="success-message">✅ Your booking has been received! We will contact you soon.</div>
+    {% endif %}
+
+    <form method="POST" class="booking-form">
+      <label>Name *</label>
+      <input type="text" name="name" required>
+
+      <label>Email *</label>
+      <input type="email" name="email" required>
+
+      <label>Phone *</label>
+      <input type="text" name="phone" placeholder="+996..." required>
+
+      <label>Number of Persons *</label>
+      <input type="number" name="persons" min="1" required>
+
+      <label>Date *</label>
+      <input type="date" name="date" required>
+
+      <button type="submit" class="submit-button">Confirm Booking</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kyrgyz Horizont | Designed with ❤️ in Kyrgyzstan</p>
+  </footer>
+</body>
+</html>

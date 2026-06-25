@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="container py-5">
+
+  <!-- HEADER -->
+  <div class="text-center mb-5">
+    <h1 class="fw-bold mb-2 fade-in">Contact & Quick Booking</h1>
+    <p class="text-muted lead fade-in delay-1">
+      We reply fast. Usually within 1–3 hours.
+    </p>
+  </div>
+
+  <div class="row g-5 align-items-start">
+
+    <!-- LEFT -->
+    <div class="col-lg-6 reveal">
+
+      <div class="mb-4">
+        <h4 class="fw-bold">Get in touch</h4>
+        <p class="mb-1">
+          📞 <strong>Phone / WhatsApp:</strong>
+          <a href="{{ WHATSAPP_LINK }}" class="wa-btn">
+            +996 507 28 20 27
+          </a>
+        </p>
+        <p class="mb-1">
+          ✉️ <strong>Email:</strong>
+          <a href="mailto:kyrgyzhorizont@gmail.com">kyrgyzhorizont@gmail.com</a>
+        </p>
+        <p class="text-muted small">
+          Bishkek, Kyrgyzstan • UTC+6
+        </p>
+      </div>
+
+      <!-- MAP -->
+      <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm mb-4">
+        <iframe
+          src="https://www.google.com/maps?q=Bishkek&hl=en&z=12&output=embed"
+          loading="lazy"
+          style="border:0;">
+        </iframe>
+      </div>
+
+      <!-- VIDEO -->
+      <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+        <iframe src="https://www.youtube.com/embed/6zN9y4nOlNw" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="col-lg-6 reveal">
+      <div class="card p-4 shadow-lg border-0">
+
+        <h4 class="fw-bold mb-3">Send us a message</h4>
+
+        <!-- Status box -->
+        <div id="form-status"></div>
+
+        <form id="contact-form" method="POST" action="/send_message">
+
+          <!-- Name -->
+          <div class="mb-3">
+            <label class="form-label">Name *</label>
+            <input name="name" required type="text" class="form-control" placeholder="Your name">
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label class="form-label">Email *</label>
+            <input name="email" required type="email" class="form-control" placeholder="you@example.com">
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-3">
+            <label class="form-label">Phone (WhatsApp)</label>
+            <input name="phone" type="tel" class="form-control" placeholder="+996 507 282 027">
+          </div>
+
+          <!-- Tour -->
+          <div class="mb-3">
+            <label class="form-label">Tour (optional)</label>
+            <select name="tour" class="form-select">
+              <option value="">— Not sure yet —</option>
+              {% for t in tours %}
+              <option value="{{ t.title }}">{{ t.title }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <!-- Message -->
+          <div class="mb-3">
+            <label class="form-label">Message *</label>
+            <textarea name="message" required class="form-control" rows="4"></textarea>
+          </div>
+
+          <!-- Agree -->
+          <div class="form-check mb-3">
+            <input class="form-check-input" id="agree" type="checkbox" required>
+            <label class="form-check-label" for="agree">I agree with the terms *</label>
+          </div>
+
+          <!-- Buttons -->
+          <div class="d-flex gap-3">
+            <button class="btn btn-primary px-4" type="submit">Send</button>
+            <a href="{{ WHATSAPP_LINK }}" class="btn btn-success px-4">WhatsApp</a>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AJAX SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const box = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    box.innerHTML = "";
+
+    const data = new FormData(form);
+
+    const res = await fetch("/send_message", {
+      method: "POST",
+      body: data
+    });
+
+    const json = await res.json();
+
+    if (json.ok) {
+      box.className = "alert alert-success";
+      box.innerHTML = "Thanks! Your message was sent.";
+      form.reset();
+    } else {
+      box.className = "alert alert-danger";
+      box.innerHTML = json.error || "Something went wrong.";
+    }
+  });
+});
+</script>
+
+{% endblock %}

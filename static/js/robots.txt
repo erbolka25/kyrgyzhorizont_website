@@ -1,0 +1,11 @@
+# Kyrgyz Horizont robots.txt
+# Last updated: 2025-11-05
+
+User-agent: *
+Allow: /
+
+# Backend endpoints not для индексации
+Disallow: /send_message
+
+# Укажи абсолютный URL карты сайта (обнови домен на проде)
+Sitemap: https://kyrgyzhorizont.com/sitemap.xml
