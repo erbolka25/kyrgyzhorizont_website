@@ -1,24 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- ============================================
-     HERO SECTION
-============================================ -->
 <section class="solo-hero container py-5">
   <div class="solo-hero-box shadow-xl rounded-4">
     <div class="solo-hero-content">
 
-      <p class="hero-kicker">Kyrgyz Horizont — Solo Trip Experts</p>
+      <p class="hero-kicker" data-i18n="solo.kicker">Kyrgyz Horizont — Solo Trip Experts</p>
 
-      <h1 class="display-5 fw-bold mb-3">Solo Travel in Kyrgyzstan</h1>
+      <h1 class="display-5 fw-bold mb-3" data-i18n="solo.title">Solo Travel in Kyrgyzstan</h1>
 
-      <p class="lead text-light mb-4">
-        Safe, independent and affordable itineraries designed by locals.  
+      <p class="lead text-light mb-4" data-i18n="solo.subtitle">
+        Safe, independent and affordable itineraries designed by locals.
         Receive your personalized route within 24 hours.
       </p>
 
       <a href="{{ WHATSAPP_LINK }}" target="_blank"
-         class="btn btn-warning btn-lg rounded-pill px-4 hover-raise shadow-lg">
+         class="btn btn-warning btn-lg rounded-pill px-4 hover-raise shadow-lg"
+         data-i18n="solo.cta_btn">
         Get My Custom Solo Plan →
       </a>
     </div>
@@ -26,42 +24,32 @@
 </section>
 
 
-
-<!-- ============================================
-     WHY SOLO TRAVEL WITH US
-============================================ -->
 <section class="container my-5">
-  <h2 class="section-title text-center mb-4">Why Solo Travelers Choose Us</h2>
+  <h2 class="section-title text-center mb-4" data-i18n="solo.why_title">Why Solo Travelers Choose Us</h2>
 
   <div class="row g-4 text-center">
 
     <div class="col-md-4">
       <div class="solo-feature-card shadow-sm reveal">
         <div class="icon-lg mb-2">🛡️</div>
-        <h3 class="h5 fw-bold mb-2">Safe & Private</h3>
-        <p class="text-muted">
-          Verified drivers, trusted stays, and 24/7 WhatsApp support.
-        </p>
+        <h3 class="h5 fw-bold mb-2" data-i18n="solo.f1.title">Safe & Private</h3>
+        <p class="text-muted" data-i18n="solo.f1.text">Verified drivers, trusted stays, and 24/7 WhatsApp support.</p>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="solo-feature-card shadow-sm reveal">
         <div class="icon-lg mb-2">🗺️</div>
-        <h3 class="h5 fw-bold mb-2">Tailored Routes</h3>
-        <p class="text-muted">
-          We design your itinerary from scratch — based on your dates and style.
-        </p>
+        <h3 class="h5 fw-bold mb-2" data-i18n="solo.f2.title">Tailored Routes</h3>
+        <p class="text-muted" data-i18n="solo.f2.text">We design your itinerary from scratch — based on your dates and style.</p>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="solo-feature-card shadow-sm reveal">
         <div class="icon-lg mb-2">💵</div>
-        <h3 class="h5 fw-bold mb-2">Fits Any Budget</h3>
-        <p class="text-muted">
-          Budget, comfort or premium — fully customizable planning.
-        </p>
+        <h3 class="h5 fw-bold mb-2" data-i18n="solo.f3.title">Fits Any Budget</h3>
+        <p class="text-muted" data-i18n="solo.f3.text">Budget, comfort or premium — fully customizable planning.</p>
       </div>
     </div>
 
@@ -69,52 +57,48 @@
 </section>
 
 
-
-<!-- ============================================
-     WHAT YOU GET
-============================================ -->
 <section class="container my-5">
-  <h2 class="section-title mb-4">What You Get</h2>
+  <h2 class="section-title mb-4" data-i18n="solo.get_title">What You Get</h2>
 
   <div class="solo-services-list">
 
     <div class="solo-service-item shadow-sm reveal">
       <span class="icon-sm">📅</span>
       <div>
-        <h4 class="fw-bold mb-1">Personal Travel Plan (1–14 days)</h4>
-        <p class="text-muted mb-0">Daily route, timings and highlights.</p>
+        <h4 class="fw-bold mb-1" data-i18n="solo.s1.title">Personal Travel Plan (1–14 days)</h4>
+        <p class="text-muted mb-0" data-i18n="solo.s1.text">Daily route, timings and highlights.</p>
       </div>
     </div>
 
     <div class="solo-service-item shadow-sm reveal">
       <span class="icon-sm">🏨</span>
       <div>
-        <h4 class="fw-bold mb-1">Accommodation Suggestions</h4>
-        <p class="text-muted mb-0">Hand-picked hotels, yurts and guesthouses.</p>
+        <h4 class="fw-bold mb-1" data-i18n="solo.s2.title">Accommodation Suggestions</h4>
+        <p class="text-muted mb-0" data-i18n="solo.s2.text">Hand-picked hotels, yurts and guesthouses.</p>
       </div>
     </div>
 
     <div class="solo-service-item shadow-sm reveal">
       <span class="icon-sm">🚗</span>
       <div>
-        <h4 class="fw-bold mb-1">Transport Options</h4>
-        <p class="text-muted mb-0">Drivers, taxis, shared rides and buses.</p>
+        <h4 class="fw-bold mb-1" data-i18n="solo.s3.title">Transport Options</h4>
+        <p class="text-muted mb-0" data-i18n="solo.s3.text">Drivers, taxis, shared rides and buses.</p>
       </div>
     </div>
 
     <div class="solo-service-item shadow-sm reveal">
       <span class="icon-sm">💰</span>
       <div>
-        <h4 class="fw-bold mb-1">Budget Overview</h4>
-        <p class="text-muted mb-0">Clear cost breakdown for the full trip.</p>
+        <h4 class="fw-bold mb-1" data-i18n="solo.s4.title">Budget Overview</h4>
+        <p class="text-muted mb-0" data-i18n="solo.s4.text">Clear cost breakdown for the full trip.</p>
       </div>
     </div>
 
     <div class="solo-service-item shadow-sm reveal">
       <span class="icon-sm">💬</span>
       <div>
-        <h4 class="fw-bold mb-1">24/7 WhatsApp Support</h4>
-        <p class="text-muted mb-0">English support throughout your journey.</p>
+        <h4 class="fw-bold mb-1" data-i18n="solo.s5.title">24/7 WhatsApp Support</h4>
+        <p class="text-muted mb-0" data-i18n="solo.s5.text">English support throughout your journey.</p>
       </div>
     </div>
 
@@ -122,65 +106,51 @@
 </section>
 
 
-
-<!-- ============================================
-     PRICING PLANS — 3 Tiers (25/50/100)
-============================================ -->
 <section class="container my-5">
-  <h2 class="section-title mb-4 text-center">Trip Planning Packages</h2>
+  <h2 class="section-title mb-4 text-center" data-i18n="solo.packages_title">Trip Planning Packages</h2>
 
   <div class="row g-4">
 
-    <!-- LITE PLAN ($25) -->
     <div class="col-md-4">
       <div class="solo-plan-card shadow-sm reveal text-center">
-        <h4 class="fw-bold mb-2 text-primary">Lite Plan — $25</h4>
-        <p class="text-muted small mb-3">For simple short trips</p>
-
+        <h4 class="fw-bold mb-2 text-primary" data-i18n="solo.lite.title">Lite Plan — $25</h4>
+        <p class="text-muted small mb-3" data-i18n="solo.lite.level">For simple short trips</p>
         <ul class="list-unstyled small mb-3 text-start d-inline-block">
           <li>✔ Personalized 1–14 day route</li>
           <li>✔ Accommodation suggestions</li>
           <li>✔ Transport options</li>
           <li>✔ Budget estimate</li>
         </ul>
-
         <p class="fw-bold text-primary fs-4">$25</p>
-
         <a href="{{ WHATSAPP_LINK }}" target="_blank"
-           class="btn btn-outline-primary rounded-pill px-4">
+           class="btn btn-outline-primary rounded-pill px-4" data-i18n="solo.lite.btn">
           Get Lite Plan →
         </a>
       </div>
     </div>
 
-    <!-- FULL PLAN ($50) -->
     <div class="col-md-4">
       <div class="solo-plan-card shadow-sm reveal text-center premium-card">
-        <h4 class="fw-bold mb-2 text-success">Full Plan — $50</h4>
-        <p class="text-muted small mb-3">Most popular</p>
-
+        <h4 class="fw-bold mb-2 text-success" data-i18n="solo.full.title">Full Plan — $50</h4>
+        <p class="text-muted small mb-3" data-i18n="solo.full.level">Most popular</p>
         <ul class="list-unstyled small mb-3 text-start d-inline-block">
           <li>✔ Everything from Lite</li>
           <li>✔ Booking links for stays & transport</li>
           <li>✔ Full trip organization help</li>
           <li>✔ 24/7 WhatsApp support during trip</li>
         </ul>
-
         <p class="fw-bold text-success fs-4">$50</p>
-
         <a href="{{ WHATSAPP_LINK }}" target="_blank"
-           class="btn btn-success rounded-pill px-4 text-white">
+           class="btn btn-success rounded-pill px-4 text-white" data-i18n="solo.full.btn">
           Get Full Plan →
         </a>
       </div>
     </div>
 
-    <!-- PREMIUM PLAN ($100) -->
     <div class="col-md-4">
       <div class="solo-plan-card shadow-sm reveal text-center premium-ultimate-card">
-        <h4 class="fw-bold mb-2 text-warning">Premium Plan — $100</h4>
-        <p class="text-muted small mb-3">For ultimate support</p>
-
+        <h4 class="fw-bold mb-2 text-warning" data-i18n="solo.premium.title">Premium Plan — $100</h4>
+        <p class="text-muted small mb-3" data-i18n="solo.premium.level">For ultimate support</p>
         <ul class="list-unstyled small mb-3 text-start d-inline-block">
           <li>✔ Everything from Full Plan</li>
           <li>✔ 1-on-1 consultation (audio/video)</li>
@@ -189,11 +159,9 @@
           <li>✔ Priority response (&lt;1 hour)</li>
           <li>✔ Safety route check + curated drivers</li>
         </ul>
-
         <p class="fw-bold text-warning fs-4">$100</p>
-
         <a href="{{ WHATSAPP_LINK }}" target="_blank"
-           class="btn btn-warning rounded-pill px-4 text-dark fw-bold">
+           class="btn btn-warning rounded-pill px-4 text-dark fw-bold" data-i18n="solo.premium.btn">
           Get Premium Plan →
         </a>
       </div>
@@ -203,19 +171,15 @@
 </section>
 
 
-
-<!-- ============================================
-     FINAL CTA
-============================================ -->
 <section class="container text-center my-5">
   <div class="cta-box shadow-lg">
-    <h2 class="fw-bold mb-2">Ready to Start Your Solo Trip?</h2>
-    <p class="text-light mb-3">
-      Send us a message — we’ll build your itinerary and support you throughout the journey.
+    <h2 class="fw-bold mb-2" data-i18n="solo.final_title">Ready to Start Your Solo Trip?</h2>
+    <p class="text-light mb-3" data-i18n="solo.final_text">
+      Send us a message — we'll build your itinerary and support you throughout the journey.
     </p>
-
     <a href="{{ WHATSAPP_LINK }}" target="_blank"
-       class="btn btn-warning btn-lg rounded-pill px-4 hover-raise">
+       class="btn btn-warning btn-lg rounded-pill px-4 hover-raise"
+       data-i18n="solo.final_btn">
       Message on WhatsApp →
     </a>
   </div>

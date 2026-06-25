@@ -1,96 +1,85 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 
-<!-- HERO -->
 <section class="regions-hero container py-5 text-center">
-  <h1 class="fw-bold mb-3">Regions of Kyrgyzstan</h1>
-  <p class="text-muted lead">
+  <h1 class="fw-bold mb-3" data-i18n="regions.title">Regions of Kyrgyzstan</h1>
+  <p class="text-muted lead" data-i18n="regions.subtitle">
     We focus on the most beautiful and accessible regions of Kyrgyzstan —
     perfect for first-time visitors and independent travelers.
   </p>
 </section>
 
-<!-- REGION CARDS -->
 <section class="container">
   <div class="row g-5">
 
-    <!-- =============================
-         ISSYK-KUL
-    ============================== -->
+    <!-- ISSYK-KUL -->
     <div class="col-lg-4 col-md-6">
       <div class="region-card shadow-sm reveal">
         <img src="{{ url_for('static', filename='image/yssuk-kul.jpg') }}"
-             class="region-img" alt="Issyk-Kul Lake in Kyrgyzstan">
+             class="region-img" alt="Issyk-Kul Lake">
         <div class="region-body">
-          <h3 class="fw-bold">Issyk-Kul Region</h3>
-          <p class="text-muted mb-3">
+          <h3 class="fw-bold" data-i18n="regions.r1.title">Issyk-Kul Region</h3>
+          <p class="text-muted mb-3" data-i18n="regions.r1.desc">
             Alpine lake, sandy beaches, red canyons and easy 1–2 day hikes —
             the best starting point for exploring Kyrgyzstan.
           </p>
-
           <ul class="region-list">
             <li>Skazka Canyon (Fairy Tale)</li>
             <li>Jety-Oguz & Broken Heart</li>
             <li>Barskoon waterfalls</li>
             <li>Beach villages & viewpoints</li>
           </ul>
-
-          <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning rounded-pill mt-2" target="_blank">
+          <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning rounded-pill mt-2" target="_blank"
+             data-i18n="regions.r1.btn">
             Ask for Issyk-Kul trip →
           </a>
         </div>
       </div>
     </div>
 
-    <!-- =============================
-         NARYN / SONG-KOL
-    ============================== -->
+    <!-- NARYN / SONG-KOL -->
     <div class="col-lg-4 col-md-6">
       <div class="region-card shadow-sm reveal">
         <img src="{{ url_for('static', filename='image/song-kol-yurt.jpg') }}"
-             class="region-img" alt="Song-Kol lake and yurt camp">
+             class="region-img" alt="Song-Kol yurt camp">
         <div class="region-body">
-          <h3 class="fw-bold">Naryn & Song-Kol Region</h3>
-          <p class="text-muted mb-3">
+          <h3 class="fw-bold" data-i18n="regions.r2.title">Naryn & Song-Kol Region</h3>
+          <p class="text-muted mb-3" data-i18n="regions.r2.desc">
             The heart of nomadic life — remote valleys, horses, yurts and
             endless high-mountain pastures.
           </p>
-
           <ul class="region-list">
             <li>Song-Kol lake (top nomad spot)</li>
             <li>Horse trekking routes</li>
             <li>Yurt camps & shepherd families</li>
             <li>Scenic mountain roads</li>
           </ul>
-
-          <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning rounded-pill mt-2" target="_blank">
+          <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning rounded-pill mt-2" target="_blank"
+             data-i18n="regions.r2.btn">
             Plan Song-Kol trip →
           </a>
         </div>
       </div>
     </div>
 
-    <!-- =============================
-         KARAKOL & ALA-KUL
-    ============================== -->
+    <!-- KARAKOL & ALA-KUL -->
     <div class="col-lg-4 col-md-6">
       <div class="region-card shadow-sm reveal">
         <img src="{{ url_for('static', filename='image/alakul.webp') }}"
              class="region-img" alt="Ala-Kul lake near Karakol">
         <div class="region-body">
-          <h3 class="fw-bold">Karakol & Ala-Kul</h3>
-          <p class="text-muted mb-3">
+          <h3 class="fw-bold" data-i18n="regions.r3.title">Karakol & Ala-Kul</h3>
+          <p class="text-muted mb-3" data-i18n="regions.r3.desc">
             The trekking capital of Kyrgyzstan — glaciers, forest valleys and the legendary Ala-Kul lake.
           </p>
-
           <ul class="region-list">
             <li>Ala-Kul lake (iconic trekking route)</li>
             <li>Altyn Arashan hot springs</li>
             <li>Karakol gorge & viewpoints</li>
             <li>Multi-day trekking circuits</li>
           </ul>
-
-          <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning rounded-pill mt-2" target="_blank">
+          <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning rounded-pill mt-2" target="_blank"
+             data-i18n="regions.r3.btn">
             Ask about treks →
           </a>
         </div>
@@ -100,14 +89,14 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="container text-center my-5">
   <div class="cta-box shadow-lg">
-    <h2 class="fw-bold mb-2">Not sure which region to choose?</h2>
-    <p class="text-light mb-3">
-      Tell us your dates, budget and travel style — we’ll recommend the best region and build your route.
+    <h2 class="fw-bold mb-2" data-i18n="regions.cta_title">Not sure which region to choose?</h2>
+    <p class="text-light mb-3" data-i18n="regions.cta_text">
+      Tell us your dates, budget and travel style — we'll recommend the best region and build your route.
     </p>
-    <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning btn-lg rounded-pill px-4" target="_blank">
+    <a href="{{ WHATSAPP_LINK }}" class="btn btn-warning btn-lg rounded-pill px-4" target="_blank"
+       data-i18n="cta.btn">
       Contact on WhatsApp
     </a>
   </div>
